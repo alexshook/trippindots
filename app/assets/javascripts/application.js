@@ -15,10 +15,8 @@
 //= require turbolinks
 //= require underscore.min.js
 //= require backbone.min.js
-//= require_tree ./models
-//= require_tree ./collections
 //= require_tree ./views
-//= require         router
+//= require_tree ./router
 //= require_tree .
 
 
