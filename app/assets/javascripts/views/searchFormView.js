@@ -13,6 +13,7 @@ var SearchFormView = Backbone.View.extend({
   getEchoNestData: function() {
     $('#trippin-display').empty(); // this empties the div that displays the dots
     var title = this.$('#search-input').val();
+    var sensitivity = this.$('#sensitivity-input').val();
     title = title.split(' ').join('+');
     $.ajax({
       url: '/search',
@@ -20,7 +21,8 @@ var SearchFormView = Backbone.View.extend({
       data: {title: title},
       dataType: 'json'
     }).done(function () {
-
+      var appView = new TrippinDotsView(data, sensitivity);
+      appView.$el.appendTo($('#trippin-display'));
     });
   }
 })
