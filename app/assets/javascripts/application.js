@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore.min.js
+//= require backbone.min.js
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require         router
 //= require_tree .
+
+
+$(document).ready(function() {
+  dotApp = new AppRouter();
+  dotApp.start();
+});

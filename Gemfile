@@ -27,3 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'httparty'
+
+gem 'pry-rails', :group => :development
