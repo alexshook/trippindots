@@ -21,8 +21,11 @@ var SearchFormView = Backbone.View.extend({
       data: {title: title},
       dataType: 'json'
     }).done(function () {
+      console.log(sensitivity);
       var appView = new TrippinDotsView(data, sensitivity);
+      console.log(appView);
       appView.$el.appendTo($('#trippin-display'));
+
     });
   }
 })

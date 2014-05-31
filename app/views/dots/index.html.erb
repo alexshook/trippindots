@@ -4,8 +4,20 @@
 
 <script type="text/template" id="search-form-template">
       <input id="search-input" name="song-title" placeholder ="Enter Song Title" type="text">
-      <input id="sensitivity-input" name="sensitivity" type="range" min="20" max="40">
+      <input id="sensitivity-input" name="sensitivity" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
+      <input id="sensitivity-value" type="text" name="" size="5">
       <input id="search-button" type="submit" >
+</script>
+
+<script>
+
+        function printValue(sliderID, textbox) {
+            var x = document.getElementById(textbox);
+            var y = document.getElementById(sliderID);
+            x.value = y.value;
+        }
+
+        window.onload = function() { printValue('sensitivity-input', 'sensitivity-value') }
 </script>
 
 <div id="trippin-display"></div>
