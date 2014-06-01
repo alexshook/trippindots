@@ -8,9 +8,11 @@ var TrippinDotsView = Backbone.View.extend({
     this.render();
   },
   render: function() {
+    $('#trippin-display').append('<h2>' + this.options['song_name'] + ' by: ' + this.options['artist_name'].split("+").join(" ") + '</h2>');
     _.each(this.sections, function(section, index) {
       if (index !== 0) {
-        $('#trippin-display').append('<p>section ' + index + '</p> <div class="section" id="section_' + index + '"></div>');
+        $('#trippin-display').append('<p>section start time: ' + Math.round(this.sections[index-1]['start']) + ' secs - ' + Math.round(section["start"]) + ' secs</p> <div class="section" id="section_' + index + '"></div>');
+        setTimeout(self.scroller, section["start"] * 1000, $('div#section_' + index).offset().top);
       }
     }.bind(this));
     this.appendAudio();
@@ -19,10 +21,10 @@ var TrippinDotsView = Backbone.View.extend({
     }.bind(this), 0);
   },
   appendAudio: function() {
-    $('#trippin-display').append("<audio id='audio-play' src='/assets/gotye.mp3'></audio>");
+    $('#trippin-display').append("<audio id='audio-play' src='/assets/bytheway.mp3'></audio>");
     setTimeout(function(){
       $('#audio-play').trigger('play');
-    }, 400);
+    }, 200);
   },
   initializeDots: function() {
     for (var i = 0; i < this.segments.length; i++) {
@@ -51,5 +53,10 @@ var TrippinDotsView = Backbone.View.extend({
         break;
       }
     }
+  },
+  scroller: function(offset){
+    $('html, body').animate({
+      scrollTop: offset
+    }, 500);
   }
 })

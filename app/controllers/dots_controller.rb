@@ -13,8 +13,10 @@ class DotsController < ApplicationController
     itunes_audio = ItunesSearch::get_itunes_url(response[0], title)
     respond_to do |format|
       format.html { }
-      format.json { render json: { :response => response[1],
-                                                      :itunes_audio => itunes_audio} }
+      format.json { render json: { :artist_name => response[0],
+                                   :song_name => response[1],
+                                   :response => response[2],
+                                   :itunes_audio => itunes_audio} }
     end
 
   end
