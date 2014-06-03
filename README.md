@@ -5,4 +5,4 @@ We're visualizing songs with dots using the Echo Nest and iTunes APIs. The conce
 
 Team Members: [Alex Shook](http://github.com/alexshook), [Ash Kamel](http://github.com/ajkamel), [Jesse Sessler](http://github.com/jemise111), [Verner D'souza](http://github.com/verner-dz)
 
-`Tripping dots was created during an 8 hour hackathon at the Etsy Month Music Hackathon`
+Tripping dots was created during an 8 hour hackathon at the Etsy Month Music Hackathon
