@@ -24,7 +24,7 @@ var TrippinDotsView = Backbone.View.extend({
     }.bind(this), 0);
   },
   appendAudio: function() {
-    $('#trippin-display').append("<audio id='audio-play' src='/assets/gotye.mp3'></audio>");
+    $('#trippin-display').append("<audio id='audio-play' src='/assets/bytheway.mp3'></audio>");
     setTimeout(function(){
       $('#audio-play').trigger('play');
     }, 0);
