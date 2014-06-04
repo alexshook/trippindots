@@ -11,9 +11,9 @@ var SearchFormView = Backbone.View.extend({
     this.$el.html(this.template);
   },
   getEchoNestData: function() {
-    $('#trippin-display').empty(); // this empties the div that displays the dots
+    this.cleanTrippinDisplay();
     var title = this.$('#search-input').val();
-    var sensitivity = this.$('#sensitivity-input').val();
+    var sensitivity = this.$('#sensitivity-value').val();
     title = title.split(' ').join('+');
     $.ajax({
       url: '/search',
@@ -21,14 +21,23 @@ var SearchFormView = Backbone.View.extend({
       data: {title: title},
       dataType: 'json'
     }).done(function(data) {
-      var appView = new TrippinDotsView({
-        data: data['response'],
+      this.trippinDotsView = new TrippinDotsView({
+        data: data['meta_data'],
         sensitivity: sensitivity,
-        itunes_audio: data['itunes_audio'],
-        artist_name: data['artist_name'],
-        song_name: data['song_name']
+        itunes_audio: data['itunes_audio_url'],
+        artist: data['artist'],
+        song: data['song']
       });
-    appView.$el.appendTo($('#trippin-display'));
-    });
+    this.trippinDotsView.$el.appendTo($('#trippin-display'));
+    }.bind(this));
+  },
+  cleanTrippinDisplay: function(){
+    if (this.trippinDotsView !== undefined) {
+      _.each(this.trippinDotsView.timeOuts, function(timeOut, index){
+        clearTimeout(timeOut);
+      }.bind(this));
+    }
+    $('#trippin-display').remove();
+    $('body').append("<div id='trippin-display'>");
   }
-})
+});

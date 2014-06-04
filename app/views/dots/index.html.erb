@@ -1,11 +1,12 @@
 <h1>Trippin' Dots</h1>
 
 <div id='search-form'></div>
+<em>Don't worry about scrolling, we'll do that for you.</em>
 
 <script type="text/template" id="search-form-template">
-  <input id="search-input" name="song-title" placeholder ="Enter Song Title" type="text">
-  <input id="sensitivity-input" name="sensitivity" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
-  <input id="sensitivity-value" type="text" name="" size="5">
+  <input id="search-input" name="song-title" placeholder ="Search for song" type="text">
+  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
+  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
   <input id="search-button" type="submit" >
 </script>
 
