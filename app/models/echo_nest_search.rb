@@ -8,8 +8,6 @@ class EchoNestSearch
        song_data = HTTParty.get(analysis_url)
        return response_data = [artist_name, song_name, song_data]
   end
-
-
 end
 
 
