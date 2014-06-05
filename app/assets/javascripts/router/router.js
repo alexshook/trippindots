@@ -10,8 +10,6 @@ AppRouter = Backbone.Router.extend({
   },
 
   index: function() {
-    var searchForm = new SearchFormView();
-
+    searchFormView = new SearchFormView();
   }
-
-})
+});

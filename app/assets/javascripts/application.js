@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require underscore.min.js
-//= require backbone.min.js
+//= require underscore.min
+//= require backbone.min
 //= require_tree ./views
 //= require_tree ./router
 //= require_tree .

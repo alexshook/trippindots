@@ -3,33 +3,36 @@ var TrippinDotsView = Backbone.View.extend({
   initialize: function(options) {
     self = this;
     this.options = options || {};
+    this.options.data = this.options.data;
     this.sections = this.options.data['sections'];
     this.segments = this.options.data['segments'];
+    this.timeOuts = [];
     this.render();
   },
   render: function() {
-    $('#trippin-display').append('<h2>' + this.options['song_name'] + ' by: ' + this.options['artist_name'].split("+").join(" ") + '</h2>');
+    $('#trippin-display').append('<h2 id="song">' + this.options['song'] + '</h2>');
+    $('#trippin-display').append('<h3 id="artist">' + this.options['artist'].split("+").join(" ") + '</h3>');
     _.each(this.sections, function(section, index) {
       if (index !== 0) {
         $('#trippin-display').append('<p>section start time: ' + Math.round(this.sections[index-1]['start']) + ' secs - ' + Math.round(section["start"]) + ' secs</p> <div class="section" id="section_' + index + '"></div>');
-        setTimeout(self.scroller, section["start"] * 1000, $('div#section_' + index).offset().top);
+        this.timeOuts.push(setTimeout(self.scroller, section["start"] * 1000, $('div#section_' + index).offset().top));
       }
     }.bind(this));
     this.appendAudio();
     setTimeout(function(){
-      this.initializeDots()
+      this.initializeDots();
     }.bind(this), 0);
   },
   appendAudio: function() {
     $('#trippin-display').append("<audio id='audio-play' src='/assets/bytheway.mp3'></audio>");
     setTimeout(function(){
       $('#audio-play').trigger('play');
-    }, 200);
+    }, 0);
   },
   initializeDots: function() {
     for (var i = 0; i < this.segments.length; i++) {
       if (this.segments[i]["timbre"][0] > this.options.sensitivity) {
-        setTimeout(this.appendDot, this.segments[i]["start"]*1000, this.segments[i]);
+         this.timeOuts.push(setTimeout(this.appendDot, this.segments[i]["start"]*1000, this.segments[i]));
       }
     }
   },
@@ -59,4 +62,4 @@ var TrippinDotsView = Backbone.View.extend({
       scrollTop: offset
     }, 500);
   }
-})
+});

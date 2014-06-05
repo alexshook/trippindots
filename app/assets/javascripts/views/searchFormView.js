@@ -11,24 +11,46 @@ var SearchFormView = Backbone.View.extend({
     this.$el.html(this.template);
   },
   getEchoNestData: function() {
-    $('#trippin-display').empty(); // this empties the div that displays the dots
-    var title = this.$('#search-input').val();
-    var sensitivity = this.$('#sensitivity-input').val();
+    this.cleanTrippinDisplay();
+    var title = this.$('#search-input-title').val();
+    var artist = this.$('#search-input-artist').val();
+    var sensitivity = this.$('#sensitivity-value').val();
     title = title.split(' ').join('+');
+    artist = artist.split(' ').join('+');
     $.ajax({
       url: '/search',
       type: 'GET',
-      data: {title: title},
+      data: {
+        title: title,
+        artist_name: artist
+      },
       dataType: 'json'
     }).done(function(data) {
-      var appView = new TrippinDotsView({
-        data: data['response'],
-        sensitivity: sensitivity,
-        itunes_audio: data['itunes_audio'],
-        artist_name: data['artist_name'],
-        song_name: data['song_name']
-      });
-    appView.$el.appendTo($('#trippin-display'));
-    });
+      if (data['artist'] === 'trippinDots error') {
+        this.trippinDotsError();
+      } else {
+        this.trippinDotsView = new TrippinDotsView({
+          data: data['meta_data'],
+          sensitivity: sensitivity,
+          artist: data['artist'],
+          song: data['song']
+        });
+      this.trippinDotsView.$el.appendTo($('#trippin-display'));
+    }
+    }.bind(this));
+  },
+  cleanTrippinDisplay: function(){
+    $('#trippin-error').remove();
+    if (this.trippinDotsView !== undefined) {
+      _.each(this.trippinDotsView.timeOuts, function(timeOut, index){
+        clearTimeout(timeOut);
+      }.bind(this));
+    }
+    $('#trippin-display').remove();
+    $('body').append("<div id='trippin-display'>");
+  },
+  trippinDotsError: function(){
+    $('#trippin-error').remove();
+    $('body').append("<div id='trippin-error'>Sorry, we don't have data on that song/artist. Check your spelling or try searching again</div>");
   }
-})
+});
