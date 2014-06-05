@@ -13,6 +13,9 @@ class DotsController < ApplicationController
     # echonest_id = response.
     # fma_audio = FMASearch::get_fma_url(echonest_id)
     # itunes_audio_url = ItunesSearch::get_itunes_url(artist_name, title)
+    title_soundcloud = title.gsub(' ', '+')
+    artist_name_soundcloud = artist_name.gsub(' ', '+')
+    songs = SoundcloudSearch::search_songs(title_soundcloud, artist_name_soundcloud)
     respond_to do |format|
       format.html { }
       format.json { render json: { :artist => response[:artist],
