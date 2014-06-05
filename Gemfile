@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -16,3 +15,4 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'httparty'
 gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
+gem 'soundcloud', '~> 0.3.2'
