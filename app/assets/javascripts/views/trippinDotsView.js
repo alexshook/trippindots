@@ -4,6 +4,7 @@ var TrippinDotsView = Backbone.View.extend({
     self = this;
     this.options = options || {};
     this.options.data = this.options.data;
+    console.log(this.options.data);
     this.sections = this.options.data['sections'];
     this.segments = this.options.data['segments'];
     this.timeOuts = [];
@@ -18,17 +19,17 @@ var TrippinDotsView = Backbone.View.extend({
         this.timeOuts.push(setTimeout(self.scroller, section["start"] * 1000, $('div#section_' + index).offset().top));
       }
     }.bind(this));
-    this.appendAudio();
+    // this.appendAudio();
     setTimeout(function(){
       this.initializeDots();
     }.bind(this), 0);
   },
-  appendAudio: function() {
-    $('#trippin-display').append("<audio id='audio-play' src='/assets/bytheway.mp3'></audio>");
-    setTimeout(function(){
-      $('#audio-play').trigger('play');
-    }, 0);
-  },
+  // appendAudio: function() {
+  //   $('#trippin-display').append("<audio id='audio-play' src='/assets/bytheway.mp3'></audio>");
+  //   setTimeout(function(){
+  //     $('#audio-play').trigger('play');
+  //   }, 0);
+  // },
   initializeDots: function() {
     for (var i = 0; i < this.segments.length; i++) {
       if (this.segments[i]["timbre"][0] > this.options.sensitivity) {

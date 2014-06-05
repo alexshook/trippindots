@@ -18,6 +18,19 @@ var SearchFormView = Backbone.View.extend({
     title = title.split(' ').join('+');
     artist = artist.split(' ').join('+');
     $.ajax({
+      url: '/search_soundcloud',
+      type: 'GET',
+      data: {
+        title: title,
+        artist_name: artist
+      },
+      dataType: 'json'
+    }).done(function(data) {
+      console.log(data);
+      var soundcloudSong = data[:soundcloud_song];
+      $('#trippin-display').append("<iframe width='0' height='0' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//" + soundcloudSong + "&amp;auto_play=true&amp;hide_related=false&amp;visual=true'></iframe>")
+    });
+    $.ajax({
       url: '/search',
       type: 'GET',
       data: {
