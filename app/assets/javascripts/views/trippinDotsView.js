@@ -4,7 +4,6 @@ var TrippinDotsView = Backbone.View.extend({
     self = this;
     this.options = options || {};
     this.options.data = this.options.data;
-    console.log(this.options.data);
     this.sections = this.options.data['sections'];
     this.segments = this.options.data['segments'];
     this.timeOuts = [];

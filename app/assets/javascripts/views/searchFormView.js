@@ -26,9 +26,10 @@ var SearchFormView = Backbone.View.extend({
       },
       dataType: 'json'
     }).done(function(data) {
-      console.log(data);
-      var soundcloudSong = data[:soundcloud_song];
-      $('#trippin-display').append("<iframe width='0' height='0' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//" + soundcloudSong + "&amp;auto_play=true&amp;hide_related=false&amp;visual=true'></iframe>")
+      var soundcloudSong = data['soundcloud_song'];
+      var soundcloudSongSanitized = soundcloudSong.replace('http://', '')
+      console.log(soundcloudSongSanitized);
+      $('#sound').append("<iframe width='0' height='0' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//" + soundcloudSongSanitized + "&amp;auto_play=true&amp;hide_related=false&amp;visual=true'></iframe>");
     });
     $.ajax({
       url: '/search',
