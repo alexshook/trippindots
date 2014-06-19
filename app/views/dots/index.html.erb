@@ -1,16 +1,30 @@
 <h1>Trippin' Dots</h1>
 
-<div id='search-form'></div>
-<em>Don't worry about scrolling, we'll do that for you.</em>
+<div id='search-form'>
 
-<script type="text/template" id="search-form-template">
-  <input id="search-input-title" name="song-title" placeholder ="Song title" type="text">
-  <input id="search-input-artist" name="artist-name" placeholder ="Artist name" type="text">
+  <h2>Temporary Songs (songs expire 30 min after upload)</h2>
+  <% if !@temp_songs.empty? %>
+    <% @temp_songs.each do |song| %>
+      <p><%= song %></p>
+    <% end %>
+  <% else %>
+    <em>No songs available. Upload a new song!</em>
+  <% end %>
+  <br>
+  <br>
+  <%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= label_tag 'Upload a song for analysis (this could take a few seconds)' %>
+    <%= file_field_tag "songfile" %>
+    <br>
+    <%= submit_tag "Upload" %>
+  <% end %>
+    <br>
+  <em>Don't worry about scrolling, we'll do that for you.</em>
+  <br>
   <label for="sensitivity-input">Sensitivity</label>
   <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
   <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
-  <input id="search-button" type="submit" >
-</script>
+</div>
 
 <script>
   function printValue(sliderID, textbox) {

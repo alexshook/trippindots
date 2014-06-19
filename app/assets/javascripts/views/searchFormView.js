@@ -1,14 +1,13 @@
 var SearchFormView = Backbone.View.extend({
   el: 'div#search-form',
   initialize: function() {
-    this.template = _.template($("#search-form-template").html());
     this.render();
   },
   events: {
     'click #search-button': "getEchoNestData"
   },
   render: function() {
-    this.$el.html(this.template);
+
   },
   getEchoNestData: function() {
     this.cleanTrippinDisplay();
