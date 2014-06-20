@@ -5,11 +5,16 @@
   <h2>Temporary Songs (songs expire 30 min after upload)</h2>
   <% if !@temp_songs.empty? %>
     <% @temp_songs.each do |song| %>
-      <p><%= song %></p>
+      <p><%= song.key %></p><button id="analyze-button">Show me the dots</button>
     <% end %>
   <% else %>
     <em>No songs available. Upload a new song!</em>
   <% end %>
+  <br>
+  <br>
+  <label for="sensitivity-input">Sensitivity</label>
+  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
+  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
   <br>
   <br>
   <%= form_tag upload_path, :method => "post", :multipart => true do %>
@@ -21,9 +26,6 @@
     <br>
   <em>Don't worry about scrolling, we'll do that for you.</em>
   <br>
-  <label for="sensitivity-input">Sensitivity</label>
-  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
-  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
 </div>
 
 <script>

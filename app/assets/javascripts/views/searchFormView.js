@@ -4,7 +4,7 @@ var SearchFormView = Backbone.View.extend({
     this.render();
   },
   events: {
-    'click #search-button': "getEchoNestData"
+    'click #analyze-button': "getEchoNestData"
   },
   render: function() {
 

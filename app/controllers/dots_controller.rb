@@ -2,7 +2,6 @@ class DotsController < ApplicationController
 
   def index
     @temp_songs = AWS::S3::Bucket.find(ENV['S3_BUCKET_NAME_TD']).objects
-    binding.pry
   end
 
   def search
@@ -11,10 +10,6 @@ class DotsController < ApplicationController
     artist_name = params[:artist_name]
     artist_name.gsub!(' ', '%20')
     response = EchoNestSearch::get_echonest_data(title, artist_name)
-    # Fix when we get echonest working
-    # echonest_id = response.
-    # fma_audio = FMASearch::get_fma_url(echonest_id)
-    # itunes_audio_url = ItunesSearch::get_itunes_url(artist_name, title)
     respond_to do |format|
       format.html { }
       format.json { render json: { :artist => response[:artist],
@@ -27,11 +22,9 @@ class DotsController < ApplicationController
 
   def upload
     AWS::S3::S3Object.store(sanitize_filename(params[:songfile].original_filename),
-                            params[:songfile].read,
-                            ENV['S3_BUCKET_NAME_TD'],
-                            :access => :public_read)
-
-    # SEND OUT TO ECHONEST WITH POST REQUEST HERE FOR ANALYSIS BEFORE REFRESHING THE PAGE
+                                       params[:songfile].read,
+                                       ENV['S3_BUCKET_NAME_TD'],
+                                       :access => :public_read)
 
     redirect_to root_path
   end
