@@ -1,11 +1,12 @@
 <h1>Trippin' Dots</h1>
+<em>Don't worry about scrolling, we'll do that for you.</em>
 
 <div id='search-form'>
 
-  <h2>Temporary Songs (songs expire 30 min after upload)</h2>
+  <h2>Temporary Songs (songs expire daily)</h2>
   <% if !@temp_songs.empty? %>
     <% @temp_songs.each do |song| %>
-      <p><%= song.key %></p><button id="analyze-button">Show me the dots</button>
+      <p><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
     <% end %>
   <% else %>
     <em>No songs available. Upload a new song!</em>
@@ -17,14 +18,13 @@
   <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
   <br>
   <br>
-  <%= form_tag upload_path, :method => "post", :multipart => true do %>
+  <%= form_tag upload_path, :method => "post", :multipart => true, :id => 'upload-form' do %>
     <%= label_tag 'Upload a song for analysis (this could take a few seconds)' %>
-    <%= file_field_tag "songfile" %>
+    <%= file_field_tag "songfile", required: true %>
+    <%= image_tag('loadingGif.gif', id: 'loading-gif') %>
     <br>
     <%= submit_tag "Upload" %>
   <% end %>
-    <br>
-  <em>Don't worry about scrolling, we'll do that for you.</em>
   <br>
 </div>
 

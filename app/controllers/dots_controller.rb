@@ -4,17 +4,13 @@ class DotsController < ApplicationController
     @temp_songs = AWS::S3::Bucket.find(ENV['S3_BUCKET_NAME_TD']).objects
   end
 
-  def search
-    title = params[:title]
-    title.gsub!(' ', '%20')
-    artist_name = params[:artist_name]
-    artist_name.gsub!(' ', '%20')
-    response = EchoNestSearch::get_echonest_data(title, artist_name)
+  def echonest_analyze
+    response = EchoNestSearch::analyze_song(params['song_url'])
     respond_to do |format|
       format.html { }
-      format.json { render json: { :artist => response[:artist],
-                                   :song => response[:song],
-                                   :meta_data => response[:meta_data]
+      format.json { render json: { artist: response[:artist],
+                                   song: response[:song],
+                                   meta_data: response[:meta_data]
                                  }
       }
     end

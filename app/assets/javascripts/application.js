@@ -19,8 +19,15 @@
 //= require_tree ./router
 //= require_tree .
 
+function loadingGif() {
+  $('#upload-form').submit(function(){
+    $('#loading-gif').show();
+  });
+}
+
 
 $(document).ready(function() {
   dotApp = new AppRouter();
   dotApp.start();
+  loadingGif();
 });

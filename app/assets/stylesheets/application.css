@@ -30,3 +30,8 @@
 #trippin-error {
   color: red;
 }
+
+#loading-gif {
+  height: 50px;
+  display: none;
+}
