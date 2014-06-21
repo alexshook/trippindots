@@ -16,5 +16,5 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'httparty'
 gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
-gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-s3'
 gem 'whenever', :require => false
