@@ -1,31 +1,36 @@
-<h1>Trippin' Dots</h1>
-<em>Don't worry about scrolling, we'll do that for you.</em>
-
-<div id='search-form'>
-
-  <h2>Temporary Songs (songs expire daily)</h2>
-  <% if !@temp_songs.empty? %>
-    <% @temp_songs.each do |song| %>
-      <p><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
-    <% end %>
-  <% else %>
-    <em>No songs available. Upload a new song!</em>
-  <% end %>
-  <br>
-  <br>
-  <label for="sensitivity-input">Sensitivity</label>
-  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
-  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
-  <br>
-  <br>
+<div id="upload-form-container">
   <%= form_tag upload_path, :method => "post", :multipart => true, :id => 'upload-form' do %>
-    <%= label_tag 'Upload a song for analysis (this could take a few seconds)' %>
+    <%= label_tag 'Upload a new song for analysis' %>
+    <br>
+    <span id="label-sub-text">(This could take up to a minute)</span>
+    <br><br>
     <%= file_field_tag "songfile", required: true %>
     <%= image_tag('loadingGif.gif', id: 'loading-gif') %>
-    <br>
+    <br><br>
     <%= submit_tag "Upload" %>
   <% end %>
-  <br>
+</div>
+<h1>Trippin' Dots</h1>
+<em>Don't worry about scrolling, we'll do that for you.</em>
+<br><br>
+<a id="confused-link" href="#">I'm confused</a>
+<div id="confused-text">
+  <p>
+    Click "Start Trippin'" next to a song to see it's visualization.
+    Each section is broken down into its appropriate sections, and a dot is placed on the screen for each important note played.
+    Some songs sync better than others. You can use the sensitivity slider to adjust the frequency of dots. Lower Sensitivity = More Dots
+  </p>
+</div>
+<div id='search-form'>
+  <h2>Temporary Songs (songs expire daily)</h2>
+  <% @temp_songs.each do |song| %>
+    <div class="song-item">
+      <p><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
+    </div>
+  <% end %>
+  <label for="sensitivity-input">Sensitivity</label>
+  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" value="35" onchange="printValue('sensitivity-input', 'sensitivity-value')">
+  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" value="35" size="5">
 </div>
 
 <script>

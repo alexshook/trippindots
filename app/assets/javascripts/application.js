@@ -25,9 +25,17 @@ function loadingGif() {
   });
 }
 
+function confusedModal(){
+  $('#confused-link').click(function(e){
+    e.preventDefault();
+    $('#confused-text').slideToggle();
+  });
+}
+
 
 $(document).ready(function() {
   dotApp = new AppRouter();
   dotApp.start();
   loadingGif();
+  confusedModal();
 });

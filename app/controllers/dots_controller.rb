@@ -5,7 +5,7 @@ class DotsController < ApplicationController
   end
 
   def echonest_analyze
-    response = EchoNestSearch::analyze_song(params['song_url'])
+    response = EchoNestSearch.analyze_song(params['song_url'])
     respond_to do |format|
       format.html { }
       format.json { render json: { artist: response[:artist],
