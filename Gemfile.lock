@@ -145,7 +145,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-s3
+  aws-s3 (~> 0.6.2)
   coffee-rails (~> 4.0.0)
   dotenv-rails
   httparty
