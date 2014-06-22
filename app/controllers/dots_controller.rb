@@ -1,7 +1,10 @@
 class DotsController < ApplicationController
 
   def index
-    @temp_songs = AWS::S3::Bucket.find(ENV['S3_BUCKET_NAME_TD']).objects
+    s3 = AWS::S3.new(
+              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
+    @temp_songs = s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects
   end
 
   def echonest_analyze
@@ -17,11 +20,10 @@ class DotsController < ApplicationController
   end
 
   def upload
-    AWS::S3::S3Object.store(sanitize_filename(params[:songfile].original_filename),
-                                       params[:songfile].read,
-                                       ENV['S3_BUCKET_NAME_TD'],
-                                       :access => :public_read)
-
+    s3 = AWS::S3.new(
+              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
+    s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects[params[:songfile].original_filename].write(params[:songfile].read, acl: :public_read)
     redirect_to root_path
   end
 
