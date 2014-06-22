@@ -1,44 +1,41 @@
 var SearchFormView = Backbone.View.extend({
   el: 'div#search-form',
+
   initialize: function() {
-    this.template = _.template($("#search-form-template").html());
     this.render();
   },
+
   events: {
-    'click #search-button': "getEchoNestData"
+    'click .analyze-button': "getEchoNestData"
   },
+
   render: function() {
-    this.$el.html(this.template);
   },
-  getEchoNestData: function() {
+
+  getEchoNestData: function(e) {
     this.cleanTrippinDisplay();
-    var title = this.$('#search-input-title').val();
-    var artist = this.$('#search-input-artist').val();
+    var localURL = $(e.currentTarget).prev()[0].innerHTML;
+    var songURL = 'https://s3.amazonaws.com/trippindotssongs/' + localURL.split(' ').join('+');
     var sensitivity = this.$('#sensitivity-value').val();
-    title = title.split(' ').join('+');
-    artist = artist.split(' ').join('+');
     $.ajax({
-      url: '/search',
+      url: '/echonest_analyze',
       type: 'GET',
       data: {
-        title: title,
-        artist_name: artist
+        song_url: songURL
       },
       dataType: 'json'
     }).done(function(data) {
-      if (data['artist'] === 'trippinDots error') {
-        this.trippinDotsError();
-      } else {
-        this.trippinDotsView = new TrippinDotsView({
-          data: data['meta_data'],
-          sensitivity: sensitivity,
-          artist: data['artist'],
-          song: data['song']
-        });
+      this.trippinDotsView = new TrippinDotsView({
+        data: data.meta_data,
+        sensitivity: sensitivity,
+        artist: data.artist,
+        song: data.song,
+        songURL: songURL
+      });
       this.trippinDotsView.$el.appendTo($('#trippin-display'));
-    }
     }.bind(this));
   },
+
   cleanTrippinDisplay: function(){
     $('#trippin-error').remove();
     if (this.trippinDotsView !== undefined) {
@@ -49,6 +46,7 @@ var SearchFormView = Backbone.View.extend({
     $('#trippin-display').remove();
     $('body').append("<div id='trippin-display'>");
   },
+
   trippinDotsError: function(){
     $('#trippin-error').remove();
     $('body').append("<div id='trippin-error'>Sorry, we don't have data on that song/artist. Check your spelling or try searching again</div>");

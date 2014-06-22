@@ -19,8 +19,23 @@
 //= require_tree ./router
 //= require_tree .
 
+function loadingGif() {
+  $('#upload-form').submit(function(){
+    $('#loading-gif').show();
+  });
+}
+
+function confusedModal(){
+  $('#confused-link').click(function(e){
+    e.preventDefault();
+    $('#confused-text').slideToggle();
+  });
+}
+
 
 $(document).ready(function() {
   dotApp = new AppRouter();
   dotApp.start();
+  loadingGif();
+  confusedModal();
 });

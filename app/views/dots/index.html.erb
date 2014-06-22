@@ -1,16 +1,37 @@
+<div id="upload-form-container">
+  <%= form_tag upload_path, :method => "post", :multipart => true, :id => 'upload-form' do %>
+    <%= label_tag 'Upload a new song for analysis' %>
+    <br>
+    <span id="label-sub-text">(This could take up to a minute)</span>
+    <br><br>
+    <%= file_field_tag "songfile", required: true %>
+    <%= image_tag('loadingGif.gif', id: 'loading-gif') %>
+    <br><br>
+    <%= submit_tag "Upload" %>
+  <% end %>
+</div>
 <h1>Trippin' Dots</h1>
-
-<div id='search-form'></div>
 <em>Don't worry about scrolling, we'll do that for you.</em>
-
-<script type="text/template" id="search-form-template">
-  <input id="search-input-title" name="song-title" placeholder ="Song title" type="text">
-  <input id="search-input-artist" name="artist-name" placeholder ="Artist name" type="text">
+<br><br>
+<a id="confused-link" href="#">I'm confused</a>
+<div id="confused-text">
+  <p>
+    Click "Start Trippin'" next to a song to see it's visualization.
+    Each section is broken down into its appropriate sections, and a dot is placed on the screen for each important note played.
+    Some songs sync better than others. You can use the sensitivity slider to adjust the frequency of dots. Lower Sensitivity = More Dots
+  </p>
+</div>
+<div id='search-form'>
+  <h2>Temporary Songs (songs expire daily)</h2>
+  <% @temp_songs.each do |song| %>
+    <div class="song-item">
+      <p><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
+    </div>
+  <% end %>
   <label for="sensitivity-input">Sensitivity</label>
-  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" onchange="printValue('sensitivity-input', 'sensitivity-value')">
-  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" size="5">
-  <input id="search-button" type="submit" >
-</script>
+  <input id="sensitivity-input" name="sensitivity-slider" type="range" min="20" max="40" value="35" onchange="printValue('sensitivity-input', 'sensitivity-value')">
+  <input id="sensitivity-value" type="number" name="sensitivity-number" min="20" max="40" value="35" size="5">
+</div>
 
 <script>
   function printValue(sliderID, textbox) {

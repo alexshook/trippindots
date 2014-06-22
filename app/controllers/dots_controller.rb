@@ -1,28 +1,36 @@
 class DotsController < ApplicationController
 
   def index
+    s3 = AWS::S3.new(
+              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
+    @temp_songs = s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects
   end
 
-  def search
-    title = params[:title]
-    title.gsub!(' ', '%20')
-    artist_name = params[:artist_name]
-    artist_name.gsub!(' ', '%20')
-    response = EchoNestSearch::get_echonest_data(title, artist_name)
-    # Fix when we get echonest working
-    # echonest_id = response.
-    # fma_audio = FMASearch::get_fma_url(echonest_id)
-    # itunes_audio_url = ItunesSearch::get_itunes_url(artist_name, title)
+  def echonest_analyze
+    response = EchoNestSearch.analyze_song(params['song_url'])
     respond_to do |format|
       format.html { }
-      format.json { render json: { :artist => response[:artist],
-                                   :song => response[:song],
-                                   :meta_data => response[:meta_data]
+      format.json { render json: { artist: response[:artist],
+                                   song: response[:song],
+                                   meta_data: response[:meta_data]
                                  }
       }
     end
-
   end
 
+  def upload
+    s3 = AWS::S3.new(
+              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
+    s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects[params[:songfile].original_filename].write(params[:songfile].read, acl: :public_read)
+    redirect_to root_path
+  end
 
+  private
+
+  def sanitize_filename(file_name)
+    just_filename = File.basename(file_name)
+    just_filename.sub(/[^\w\.\-]/, '_')
+  end
 end
