@@ -17,4 +17,3 @@ gem 'httparty'
 gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
 gem 'aws-sdk'
-gem 'whenever', :require => false
