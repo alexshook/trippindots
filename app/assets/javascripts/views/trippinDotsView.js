@@ -18,7 +18,7 @@ var TrippinDotsView = Backbone.View.extend({
     } else {
       for (var i = 0; i < this.sections.length; i++) {
         if (i !== 0) {
-          $('#trippin-display').append(Math.round(this.sections[i-1].start) + ' secs - ' + Math.round(this.sections[i].start) + ' secs</p> <div class="section" id="section_' + i + '"></div>');
+          $('#trippin-display').append(Math.round(this.sections[i-1].start) + ' secs - ' + Math.round(this.sections[i].start) + ' secs</p> <div class="section" id="section_' + i + '"><hr class="section-hr"><hr class="section-hr"><hr class="section-hr"></div>');
           this.timeOuts.push(setTimeout(self.scroller, this.sections[i].start * 1000, $('div#section_' + i).offset().top));
         }
       }

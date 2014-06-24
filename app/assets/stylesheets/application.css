@@ -17,7 +17,10 @@
 .section {
   height: 300px;
   width: 100%;
-  border: 1px solid #000;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 10px solid grey;
   position: relative;
   overflow: hidden;
 }
@@ -60,4 +63,8 @@
 #confused-text {
   display: none;
   width: 400px;
+}
+
+.section-hr {
+  margin-top: 75px;
 }
