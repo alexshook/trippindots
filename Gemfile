@@ -17,4 +17,3 @@ gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
 gem 'soundcloud', '~> 0.3.2'
 gem 'aws-sdk'
-gem 'whenever', :require => false
