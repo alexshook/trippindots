@@ -18,7 +18,7 @@ var TrippinDotsView = Backbone.View.extend({
     } else {
       for (var i = 0; i < this.sections.length; i++) {
         if (i !== 0) {
-          $('#trippin-display').append(Math.round(this.sections[i-1].start) + ' secs - ' + Math.round(this.sections[i].start) + ' secs</p> <div class="section" id="section_' + i + '"></div>');
+          $('#trippin-display').append(Math.round(this.sections[i-1].start) + ' secs - ' + Math.round(this.sections[i].start) + ' secs</p> <div class="section" id="section_' + i + '"><hr class="section-hr"><hr class="section-hr"><hr class="section-hr"></div>');
           this.timeOuts.push(setTimeout(self.scroller, this.sections[i].start * 1000, $('div#section_' + i).offset().top));
         }
       }
@@ -37,7 +37,7 @@ var TrippinDotsView = Backbone.View.extend({
   },
   initializeDots: function() {
     for (var i = 0; i < this.segments.length; i++) {
-      if (this.segments[i].timbre[0] > this.options.sensitivity) {
+      if (this.segments[i].confidence > this.options.sensitivity/100) {
          this.timeOuts.push(setTimeout(this.appendDot, this.segments[i].start*1000, this.segments[i]));
       }
     }
@@ -48,19 +48,32 @@ var TrippinDotsView = Backbone.View.extend({
     var r = Math.floor(Math.random() * 255);
     var g = Math.floor(Math.random() * 255);
     var b = Math.floor(Math.random() * 255);
+    var opVal = self.opacityPicker(segment.timbre[0]);
     dot.css({
       background: 'rgb('+r+','+g+','+b+')',
-      height: size * 3,
-      width: size * 3,
-      top: Math.random() * 300,
-      left: Math.random() * $('#section_1').width()
+      height: size * 2,
+      width: size * 2,
+      opacity: opVal
     });
     dot.addClass('dot');
-    for (var i = 1; i < self.options.data.sections.length; i++) {
-      if (segment.start < self.options.data.sections[i].start) {
+    var songSections = self.options.data.sections;
+    for (var i = 1; i < songSections.length; i++) {
+      if (segment.start < songSections[i].start) {
+        var leftVal = (segment.start - songSections[i-1].start)/songSections[i-1].duration * $('#section_' + i).width();
+        var topVal = segment.pitches.indexOf(1) / segment.pitches.length * $('#section_' + i).height();
+        dot.css({left: leftVal, top: topVal});
         $('#section_' + i).append(dot);
         break;
       }
+    }
+  },
+  opacityPicker: function(brightness){
+    if (brightness < 40) {
+      return .5;
+    } else if (brightness < 50) {
+      return .75;
+    } else {
+      return 1;
     }
   },
   scroller: function(offset){
