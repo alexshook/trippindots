@@ -32,7 +32,6 @@ function confusedModal(){
   });
 }
 
-
 $(document).ready(function() {
   dotApp = new AppRouter();
   dotApp.start();
