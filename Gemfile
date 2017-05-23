@@ -14,6 +14,7 @@ gem 'spring',           group: :development
 gem 'dotenv-rails',     :groups => [:development, :test]
 gem 'rspec-rails',      group: :test
 gem 'vcr',              group: :test
+gem 'webmock',          group: :test
 gem 'pry-rails',        :groups => [:development, :test]
 gem 'rails_12factor',   group: :production
 gem 'httparty'
