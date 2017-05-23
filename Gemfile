@@ -13,7 +13,7 @@ gem 'spring',           group: :development
 
 gem 'dotenv-rails',     :groups => [:development, :test]
 gem 'rspec-rails',      group: :test
-gem 'pry-rails',        :group => :development
+gem 'pry-rails',        :groups => [:development, :test]
 gem 'rails_12factor',   group: :production
 gem 'httparty'
 gem 'soundcloud', '~> 0.3.2'
