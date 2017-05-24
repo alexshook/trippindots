@@ -9,8 +9,9 @@ class DotsController < ApplicationController
   end
 
   def spotify_analyze
-    q = "by the way"
-    response = TrackAnalyzer.new(q, access_token).run
+    params.permit(:song_name)
+    song_name = params[:song_name].presence || "by the way"
+    response = TrackAnalyzer.new(song_name, access_token).run
 
     respond_to do |format|
       format.html { }
