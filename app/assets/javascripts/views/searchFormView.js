@@ -6,19 +6,19 @@ var SearchFormView = Backbone.View.extend({
   },
 
   events: {
-    'click .analyze-button': "getEchoNestData"
+    'click .analyze-button': "getTrackAnalysis"
   },
 
   render: function() {
   },
 
-  getEchoNestData: function(e) {
+  getTrackAnalysis: function(e) {
     this.cleanTrippinDisplay();
     var localURL = $(e.currentTarget).prev()[0].innerHTML;
     var songURL = 'https://s3.amazonaws.com/trippindotssongs/' + localURL.split(' ').join('+');
     var sensitivity = this.$('#sensitivity-value').val();
     $.ajax({
-      url: '/echonest_analyze',
+      url: '/spotify_analyze',
       type: 'GET',
       data: {
         song_url: songURL
