@@ -15,4 +15,5 @@ class SpotifyAuthorization
     Base64.strict_encode64(
       "#{ENV['SPOTIFY_CLIENT_ID']}:#{ENV['SPOTIFY_CLIENT_SECRET']}"
     )
+  end
 end
