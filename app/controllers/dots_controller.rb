@@ -5,15 +5,22 @@ class DotsController < ApplicationController
               :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
               :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
 
-    @temp_songs = s3.list_objects(bucket: ENV['S3_BUCKET_NAME_TD'])
+    @temp_songs = s3.list_objects(bucket: ENV['S3_BUCKET_NAME_TD']).first.contents
   end
 
   def spotify_analyze
+    q = "by the way"
     response = TrackAnalyzer.new(q, access_token).run
 
     respond_to do |format|
       format.html { }
-      format.json { render json: response }
+      format.json { render json:
+        {
+          artist: response[:artist],
+          song: response[:track],
+          meta_data: response[:analysis]
+        }
+      }
     end
   end
 
