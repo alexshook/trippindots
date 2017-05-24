@@ -8,15 +8,12 @@ class DotsController < ApplicationController
     @temp_songs = s3.list_objects(bucket: ENV['S3_BUCKET_NAME_TD'])
   end
 
-  def echonest_analyze
-    response = EchoNestSearch.analyze_song(params['song_url'])
+  def spotify_analyze
+    response = TrackAnalyzer.new(q, access_token).run
+
     respond_to do |format|
       format.html { }
-      format.json { render json: { artist: response[:artist],
-                                   song: response[:song],
-                                   meta_data: response[:meta_data]
-                                 }
-      }
+      format.json { render json: response }
     end
   end
 
