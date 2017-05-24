@@ -3,18 +3,25 @@ class TrackAnalyzer
   TRACK_BASE_URL          = "https://api.spotify.com/v1/tracks/"
   AUDIO_ANALYSIS_BASE_URL = "https://api.spotify.com/v1/audio-analysis/"
 
-  def run(q)
-    track_id    = spotify_track_id(q)
+  attr_reader :q, :access_token
+
+  def initialize(q, access_token)
+    @q = q
+    @access_token = access_token
+  end
+
+  def run
+    track_id    = spotify_track_id
     track       = spotify_track(track_id)
     analysis    = audio_analysis(track_id)
     artist_name =  track["artists"].first["name"]
     track_name  = track["name"]
 
-    { artist: artist_name, track: track_name, analysis: analysis }
+    { artist: artist_name, track: track_name, analysis: analysis.to_h }
   end
 
-  def spotify_track_id(q)
-    request_url = SEARCH_BASE_URL + encode_query(q) + "&type=track"
+  def spotify_track_id
+    request_url = SEARCH_BASE_URL + encode_query + "&type=track"
     response    = HTTParty.get(request_url)
 
     response["tracks"]["items"].select do |item|
@@ -31,10 +38,14 @@ class TrackAnalyzer
 
   def audio_analysis(id)
     request_url = AUDIO_ANALYSIS_BASE_URL + id
-    HTTParty.get(request_url)
+    HTTParty.get(request_url, headers: auth_header)
   end
 
-  def encode_query(q)
+  def auth_header
+    { "Authorization" => "Bearer #{access_token}" }
+  end
+
+  def encode_query
     q.gsub(" ","+")
   end
 end

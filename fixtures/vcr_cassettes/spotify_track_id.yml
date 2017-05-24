@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 23 May 2017 19:22:19 GMT
+      - Wed, 24 May 2017 17:40:46 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -431,7 +431,7 @@ http_interactions:
               "href" : "https://api.spotify.com/v1/tracks/308kjPoIVBzDNExO54sqAi",
               "id" : "308kjPoIVBzDNExO54sqAi",
               "name" : "Don't Forget Me",
-              "popularity" : 61,
+              "popularity" : 60,
               "preview_url" : "https://p.scdn.co/mp3-preview/9c730751f57210697c3d178a728cfe5cc8cf811a?cid=null",
               "track_number" : 5,
               "type" : "track",
@@ -624,7 +624,7 @@ http_interactions:
               "id" : "3lrfAVd1BTUNiNj4epyZ1I",
               "name" : "By The Way",
               "popularity" : 46,
-              "preview_url" : "https://p.scdn.co/mp3-preview/d3adaf0c614c779316297a3ab507633147e0ace0?cid=null",
+              "preview_url" : null,
               "track_number" : 3,
               "type" : "track",
               "uri" : "spotify:track:3lrfAVd1BTUNiNj4epyZ1I"
@@ -1071,7 +1071,7 @@ http_interactions:
               "href" : "https://api.spotify.com/v1/tracks/141UpF0ofvBWm3r5JQwZ83",
               "id" : "141UpF0ofvBWm3r5JQwZ83",
               "name" : "The Way We Get By",
-              "popularity" : 46,
+              "popularity" : 45,
               "preview_url" : "https://p.scdn.co/mp3-preview/af7610ca4ef74461a6f30fb90950f370b49e199a?cid=null",
               "track_number" : 2,
               "type" : "track",
@@ -1337,9 +1337,9 @@ http_interactions:
             "next" : "https://api.spotify.com/v1/search?query=by+the+way&type=track&offset=20&limit=20",
             "offset" : 0,
             "previous" : null,
-            "total" : 5580
+            "total" : 5579
           }
         }
     http_version: 
-  recorded_at: Tue, 23 May 2017 19:22:19 GMT
+  recorded_at: Wed, 24 May 2017 17:40:46 GMT
 recorded_with: VCR 3.0.1

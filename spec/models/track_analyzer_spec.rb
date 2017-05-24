@@ -22,17 +22,18 @@ describe TrackAnalyzer do
     end
   end
 
-  let(:analyzer)  { TrackAnalyzer.new }
-  let(:q)         { "by the way" } 
+  let(:analyzer)      { TrackAnalyzer.new(q, access_token) }
+  let(:q)             { "by the way" } 
+  let(:access_token)  { "BQCDmGRKM2g7J83eiNbP4HghLqMiwAkWIUIRX9-qIbzshxLlAY_Jf7kWv9Odex0TxYIOXgw3-erNLxtF2MeY3w" } 
 
   describe "#run" do
     it "returns artist, track, and analysis" do
-      VCR.use_cassette("track_analyzer_run") do    
-        expect(analyzer.run(q)).to eq(
+      VCR.use_cassette("track_analyzer_run") do
+        expect(analyzer.run).to include(
           {
             artist: "Red Hot Chili Peppers",
             track: "By The Way",
-            analysis: ""
+            analysis: hash_including("meta")
           }
         )
       end
@@ -42,7 +43,7 @@ describe TrackAnalyzer do
   describe "#spotify_track_id" do
     it "is the spotify track id" do
       VCR.use_cassette("spotify_track_id") do
-        expect(analyzer.spotify_track_id(q)).to eq("1f2V8U1BiWaC9aJWmpOARe")
+        expect(analyzer.spotify_track_id).to eq("1f2V8U1BiWaC9aJWmpOARe")
       end
     end
   end
