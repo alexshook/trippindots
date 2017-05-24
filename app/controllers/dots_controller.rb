@@ -33,4 +33,8 @@ class DotsController < ApplicationController
     just_filename = File.basename(file_name)
     just_filename.sub(/[^\w\.\-]/, '_')
   end
+
+  def access_token
+    SpotifyAuthorization.new.run
+  end
 end
