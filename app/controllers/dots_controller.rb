@@ -1,11 +1,7 @@
 class DotsController < ApplicationController
 
   def index
-    s3 = Aws::S3::Client.new(
-              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
-
-    @temp_songs = s3.list_objects(bucket: ENV['S3_BUCKET_NAME_TD']).first.contents
+    @temp_songs = S3.new.tracks_list
   end
 
   def spotify_analyze
