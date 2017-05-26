@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://trippindots.s3.amazonaws.com/?encoding-type=url
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.9.22 ruby/2.3.0 x86_64-darwin15
+      X-Amz-Date:
+      - 20170525T233238Z
+      Host:
+      - trippindots.s3.amazonaws.com
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAJESG673KXCYMWVJQ/20170525/us-east-1/s3/aws4_request,
+        SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=354bc03b0bd303e7e1d9e61c39f78e97c56eeeab2357b3211614090ba4fda376
+      Content-Length:
+      - '0'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - TyzhGQBjHG6rmQciIUa2Uy2Ow8rZIhcoTWP6uKupDuPeImK7Av4roMoVu9BsLSeqxxzsgUDP5r4=
+      X-Amz-Request-Id:
+      - E842499A4E3CE535
+      Date:
+      - Thu, 25 May 2017 23:32:40 GMT
+      X-Amz-Bucket-Region:
+      - us-east-1
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>trippindots</Name><Prefix></Prefix><Marker></Marker><MaxKeys>1000</MaxKeys><EncodingType>url</EncodingType><IsTruncated>false</IsTruncated><Contents><Key>01_By_the_Way.mp3</Key><LastModified>2017-05-24T19:05:10.000Z</LastModified><ETag>&quot;587fba41fc52c301642504752fceba2e&quot;</ETag><Size>4362596</Size><Owner><ID>b81340453a08e2206a957485c82cacadf1ecc9e88ba84011e24de5fa675ec697</ID><DisplayName>petitelilyflower</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>ruffneck.mp3</Key><LastModified>2017-05-25T23:10:45.000Z</LastModified><ETag>&quot;e84c4add8c0ffda566cc9efbd5f693f1-1&quot;</ETag><Size>9056088</Size><Owner><ID>b81340453a08e2206a957485c82cacadf1ecc9e88ba84011e24de5fa675ec697</ID><DisplayName>petitelilyflower</DisplayName></Owner><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>
+    http_version: 
+  recorded_at: Thu, 25 May 2017 23:32:39 GMT
+recorded_with: VCR 3.0.1

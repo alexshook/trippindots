@@ -22,19 +22,14 @@ class DotsController < ApplicationController
   end
 
   def upload
-    s3 = Aws::S3::Client.new(
-              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
-    s3.list_objects(bucket: ENV['S3_BUCKET_NAME_TD'])[params[:songfile].original_filename].write(params[:songfile].read, acl: :public_read)
+    params.permit(:songfile)
+
+    S3.new(params[:songfile]).upload_track
+
     redirect_to root_path
   end
 
   private
-
-  def sanitize_filename(file_name)
-    just_filename = File.basename(file_name)
-    just_filename.sub(/[^\w\.\-]/, '_')
-  end
 
   def access_token
     SpotifyAuthorization.new.run
