@@ -1,10 +1,11 @@
 class S3
-  BUCKET_NAME = ENV['S3_BUCKET_NAME_TD']
+  BUCKET_NAME = ENV["S3_BUCKET_NAME_TD"]
 
-  attr_reader :songfile
+  attr_reader :file, :track_name
 
-  def initialize(songfile = nil)
-    @songfile = songfile
+  def initialize(options = {})
+    @file       = options[:songfile]
+    @track_name = sanitize(options[:track_name])
   end
 
   def tracks_list
@@ -23,16 +24,16 @@ class S3
     s3.create_multipart_upload({
       acl: "public-read",
       bucket: BUCKET_NAME,
-      key: key,
+      key: track_name,
     })
   end
 
   def upload_part(upload_id)
     s3.upload_part({
-      body: songfile.tempfile,
+      body: file.tempfile,
       bucket: BUCKET_NAME,
       content_length: 1,
-      key: key,
+      key: track_name,
       part_number: 1,
       upload_id: upload_id
     })
@@ -41,7 +42,7 @@ class S3
   def complete_multipart_upload(upload_id, etag)
     s3.complete_multipart_upload({
       bucket: BUCKET_NAME,
-      key: key,
+      key: track_name,
       multipart_upload: {
         parts: [
           {
@@ -54,20 +55,16 @@ class S3
     })
   end
 
-  def key
-    sanitize_filename(songfile.original_filename.strip.downcase)
-  end
-
-  def sanitize_filename(file_name)
-    just_filename = File.basename(file_name)
-    just_filename.sub(/[^\w\.\-]/, '_')
+  def sanitize(name)
+    return unless name
+    name.strip.downcase.gsub(/[^\w\.\-]/, "_")
   end
 
   def s3
     @s3 ||= begin
       Aws::S3::Client.new(
-        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_KEY_ID']
+        :access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+        :secret_access_key => ENV["AWS_SECRET_KEY_ID"]
       )
     end
   end
