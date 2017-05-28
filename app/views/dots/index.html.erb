@@ -4,6 +4,10 @@
     <br>
     <span id="label-sub-text">(This could take up to a minute)</span>
     <br><br>
+    <%= label_tag "What's the name of the song?" %>
+    <br><br>
+    <%=  text_field_tag "track_name", "", placeholder: "Song Name", required: true %>
+    <br><br>
     <%= file_field_tag "songfile", required: true %>
     <%= image_tag('loadingGif.gif', id: 'loading-gif') %>
     <br><br>
@@ -25,7 +29,7 @@
   <h2>Temporary Songs (songs expire daily)</h2>
   <% @temp_songs.each do |song| %>
     <div class="song-item">
-      <p><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
+      <p id=<%= song.key %>><%= song.key %></p><button class="analyze-button">Start Trippin'</button>
     </div>
   <% end %>
   <label for="sensitivity-input">Sensitivity</label>

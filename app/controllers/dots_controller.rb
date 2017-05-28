@@ -1,36 +1,37 @@
 class DotsController < ApplicationController
 
   def index
-    s3 = AWS::S3.new(
-              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
-    @temp_songs = s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects
+    @temp_songs = S3.new.tracks_list
   end
 
-  def echonest_analyze
-    response = EchoNestSearch.analyze_song(params['song_url'])
-    respond_to do |format|
-      format.html { }
-      format.json { render json: { artist: response[:artist],
-                                   song: response[:song],
-                                   meta_data: response[:meta_data]
-                                 }
-      }
-    end
+  def spotify_analyze
+    params.permit(:track_name)
+    track_name  = params[:track_name].presence || "by the way"
+    response    = TrackAnalyzer.new(track_name, access_token).run
+    audio_file  = S3.new(track_name: track_name).file
+
+    render json: {
+      artist: response[:artist],
+      song: response[:track],
+      meta_data: response[:analysis],
+      file: audio_file
+    }
   end
 
   def upload
-    s3 = AWS::S3.new(
-              :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-              :secret_access_key => ENV['AWS_SECRET_KEY_ID'])
-    s3.buckets[ENV['S3_BUCKET_NAME_TD']].objects[params[:songfile].original_filename].write(params[:songfile].read, acl: :public_read)
+    params.permit(:track_name, :songfile)
+
+    S3.new(
+      track_name: params[:track_name],
+      songfile: params[:songfile]
+    ).upload_track
+
     redirect_to root_path
   end
 
   private
 
-  def sanitize_filename(file_name)
-    just_filename = File.basename(file_name)
-    just_filename.sub(/[^\w\.\-]/, '_')
+  def access_token
+    SpotifyAuthorization.new.run
   end
 end

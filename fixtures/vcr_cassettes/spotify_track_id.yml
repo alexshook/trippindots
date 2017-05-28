@@ -1,0 +1,1345 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?q=by%20the%20way&type=track
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 24 May 2017 17:40:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=by+the+way&type=track&offset=0&limit=20",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 269000,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201694"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3ZOEytgrvLwQaqXreDs2Jx"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3ZOEytgrvLwQaqXreDs2Jx",
+              "id" : "3ZOEytgrvLwQaqXreDs2Jx",
+              "name" : "Can't Stop",
+              "popularity" : 78,
+              "preview_url" : "https://p.scdn.co/mp3-preview/ba7cb54850ccc71f42c627b36e2045cec23e2662?cid=null",
+              "track_number" : 7,
+              "type" : "track",
+              "uri" : "spotify:track:3ZOEytgrvLwQaqXreDs2Jx"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 216933,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201688"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1f2V8U1BiWaC9aJWmpOARe"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1f2V8U1BiWaC9aJWmpOARe",
+              "id" : "1f2V8U1BiWaC9aJWmpOARe",
+              "name" : "By The Way",
+              "popularity" : 71,
+              "preview_url" : "https://p.scdn.co/mp3-preview/1b6ca5843bd21973cbb2c2410616dd10564e91da?cid=null",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:1f2V8U1BiWaC9aJWmpOARe"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 231933,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201693"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1ndGB6rvxKYN9seCYO1dTF"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1ndGB6rvxKYN9seCYO1dTF",
+              "id" : "1ndGB6rvxKYN9seCYO1dTF",
+              "name" : "The Zephyr Song",
+              "popularity" : 67,
+              "preview_url" : "https://p.scdn.co/mp3-preview/379c2dd39b694289486d590a01eb813c24410f9f?cid=null",
+              "track_number" : 6,
+              "type" : "track",
+              "uri" : "spotify:track:1ndGB6rvxKYN9seCYO1dTF"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/1jWKVgnHX8nwR551hQNx5K"
+                },
+                "href" : "https://api.spotify.com/v1/albums/1jWKVgnHX8nwR551hQNx5K",
+                "id" : "1jWKVgnHX8nwR551hQNx5K",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (U.S. Version)",
+                "type" : "album",
+                "uri" : "spotify:album:1jWKVgnHX8nwR551hQNx5K"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 216973,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201688"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/2t0ZYmVXMR36fchq1Egs2d"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/2t0ZYmVXMR36fchq1Egs2d",
+              "id" : "2t0ZYmVXMR36fchq1Egs2d",
+              "name" : "By The Way",
+              "popularity" : 51,
+              "preview_url" : "https://p.scdn.co/mp3-preview/86eb8994171ae619ade3fa9f813e107bfa56ee38?cid=null",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:2t0ZYmVXMR36fchq1Egs2d"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/1jWKVgnHX8nwR551hQNx5K"
+                },
+                "href" : "https://api.spotify.com/v1/albums/1jWKVgnHX8nwR551hQNx5K",
+                "id" : "1jWKVgnHX8nwR551hQNx5K",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (U.S. Version)",
+                "type" : "album",
+                "uri" : "spotify:album:1jWKVgnHX8nwR551hQNx5K"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 269000,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201694"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4BcS4LomxUnQpzx4hCaJTs"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4BcS4LomxUnQpzx4hCaJTs",
+              "id" : "4BcS4LomxUnQpzx4hCaJTs",
+              "name" : "Can't Stop",
+              "popularity" : 54,
+              "preview_url" : "https://p.scdn.co/mp3-preview/c379eb5d5d2a31b79238f614335d9efa3c72a615?cid=null",
+              "track_number" : 7,
+              "type" : "track",
+              "uri" : "spotify:track:4BcS4LomxUnQpzx4hCaJTs"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 277160,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201692"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/308kjPoIVBzDNExO54sqAi"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/308kjPoIVBzDNExO54sqAi",
+              "id" : "308kjPoIVBzDNExO54sqAi",
+              "name" : "Don't Forget Me",
+              "popularity" : 60,
+              "preview_url" : "https://p.scdn.co/mp3-preview/9c730751f57210697c3d178a728cfe5cc8cf811a?cid=null",
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:308kjPoIVBzDNExO54sqAi"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 311866,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201691"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1iFIZUVDBCCkWe705FLXto"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1iFIZUVDBCCkWe705FLXto",
+              "id" : "1iFIZUVDBCCkWe705FLXto",
+              "name" : "Dosed",
+              "popularity" : 61,
+              "preview_url" : "https://p.scdn.co/mp3-preview/541c5cc7f18297a5234d4bd4305bc0f6d616a673?cid=null",
+              "track_number" : 4,
+              "type" : "track",
+              "uri" : "spotify:track:1iFIZUVDBCCkWe705FLXto"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/74eX4C98E4FCrAMl39qRsJ"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/74eX4C98E4FCrAMl39qRsJ",
+                  "id" : "74eX4C98E4FCrAMl39qRsJ",
+                  "name" : "Theory of a Deadman",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:74eX4C98E4FCrAMl39qRsJ"
+                } ],
+                "available_markets" : [ "AR", "BO", "BR", "CL", "CO", "CR", "DO", "EC", "GT", "HN", "MX", "NI", "PA", "PE", "PY", "SV", "TR", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/2d4tYx2ulDP1Kgudxsrs7B"
+                },
+                "href" : "https://api.spotify.com/v1/albums/2d4tYx2ulDP1Kgudxsrs7B",
+                "id" : "2d4tYx2ulDP1Kgudxsrs7B",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/0b5bdffc3447d0fe11268e5a76ae48e67115a696",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/1ea999b05d24c69a637afa0acfa3ad3e1ebaef92",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/4d19673f961125a83334988879d8898f84c81ab9",
+                  "width" : 64
+                } ],
+                "name" : "Scars & Souvenirs [Special Edition 2009]",
+                "type" : "album",
+                "uri" : "spotify:album:2d4tYx2ulDP1Kgudxsrs7B"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/74eX4C98E4FCrAMl39qRsJ"
+                },
+                "href" : "https://api.spotify.com/v1/artists/74eX4C98E4FCrAMl39qRsJ",
+                "id" : "74eX4C98E4FCrAMl39qRsJ",
+                "name" : "Theory of a Deadman",
+                "type" : "artist",
+                "uri" : "spotify:artist:74eX4C98E4FCrAMl39qRsJ"
+              } ],
+              "available_markets" : [ "AR", "BO", "BR", "CL", "CO", "CR", "DO", "EC", "GT", "HN", "MX", "NI", "PA", "PE", "PY", "SV", "TR", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 215160,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "NLA320786459"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/6rieO3zjto80uK5yIahfgC"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/6rieO3zjto80uK5yIahfgC",
+              "id" : "6rieO3zjto80uK5yIahfgC",
+              "name" : "By the Way",
+              "popularity" : 48,
+              "preview_url" : "https://p.scdn.co/mp3-preview/661df1bf883015d0a2d12cd0ed61f6d82c450630?cid=null",
+              "track_number" : 2,
+              "type" : "track",
+              "uri" : "spotify:track:6rieO3zjto80uK5yIahfgC"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/4yBK75WVCQXej1p04GWqxH"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/4yBK75WVCQXej1p04GWqxH",
+                  "id" : "4yBK75WVCQXej1p04GWqxH",
+                  "name" : "Jeezy",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:4yBK75WVCQXej1p04GWqxH"
+                } ],
+                "available_markets" : [ "CA", "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/0U54jjqJhihezshU9t9cuO"
+                },
+                "href" : "https://api.spotify.com/v1/albums/0U54jjqJhihezshU9t9cuO",
+                "id" : "0U54jjqJhihezshU9t9cuO",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/2828777d5eaf3de9f22c5aaebe0a238448aeb86d",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/09019505f8e02000a6ad8622a83293badf432a62",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/92e0a57b8aff0166b8ddf7c0c634f22e264632e2",
+                  "width" : 64
+                } ],
+                "name" : "The Recession",
+                "type" : "album",
+                "uri" : "spotify:album:0U54jjqJhihezshU9t9cuO"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/4yBK75WVCQXej1p04GWqxH"
+                },
+                "href" : "https://api.spotify.com/v1/artists/4yBK75WVCQXej1p04GWqxH",
+                "id" : "4yBK75WVCQXej1p04GWqxH",
+                "name" : "Jeezy",
+                "type" : "artist",
+                "uri" : "spotify:artist:4yBK75WVCQXej1p04GWqxH"
+              } ],
+              "available_markets" : [ "CA", "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 240000,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USUM70830997"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3lrfAVd1BTUNiNj4epyZ1I"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3lrfAVd1BTUNiNj4epyZ1I",
+              "id" : "3lrfAVd1BTUNiNj4epyZ1I",
+              "name" : "By The Way",
+              "popularity" : 46,
+              "preview_url" : null,
+              "track_number" : 3,
+              "type" : "track",
+              "uri" : "spotify:track:3lrfAVd1BTUNiNj4epyZ1I"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 256959,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201689"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/39badcyKTjOtBvv4aywpfs"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/39badcyKTjOtBvv4aywpfs",
+              "id" : "39badcyKTjOtBvv4aywpfs",
+              "name" : "Universally Speaking",
+              "popularity" : 60,
+              "preview_url" : "https://p.scdn.co/mp3-preview/2edd30e06ae0321f0d49562201b3cae32607fab3?cid=null",
+              "track_number" : 2,
+              "type" : "track",
+              "uri" : "spotify:track:39badcyKTjOtBvv4aywpfs"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/1jWKVgnHX8nwR551hQNx5K"
+                },
+                "href" : "https://api.spotify.com/v1/albums/1jWKVgnHX8nwR551hQNx5K",
+                "id" : "1jWKVgnHX8nwR551hQNx5K",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (U.S. Version)",
+                "type" : "album",
+                "uri" : "spotify:album:1jWKVgnHX8nwR551hQNx5K"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 231933,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201693"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/2UaJHs6wlASNl7q34j7hK1"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/2UaJHs6wlASNl7q34j7hK1",
+              "id" : "2UaJHs6wlASNl7q34j7hK1",
+              "name" : "The Zephyr Song",
+              "popularity" : 47,
+              "preview_url" : "https://p.scdn.co/mp3-preview/a42f2adaf648c904a0fbc0acb6000b2f5e0b3e0e?cid=null",
+              "track_number" : 6,
+              "type" : "track",
+              "uri" : "spotify:track:2UaJHs6wlASNl7q34j7hK1"
+            }, {
+              "album" : {
+                "album_type" : "single",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/4lpA7MWpQpY7hKkwfLxw2Q"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/4lpA7MWpQpY7hKkwfLxw2Q",
+                  "id" : "4lpA7MWpQpY7hKkwfLxw2Q",
+                  "name" : "Lindsay Ell",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:4lpA7MWpQpY7hKkwfLxw2Q"
+                } ],
+                "available_markets" : [ "CA", "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/20MUOmHZ0gJ476mVOyT4OI"
+                },
+                "href" : "https://api.spotify.com/v1/albums/20MUOmHZ0gJ476mVOyT4OI",
+                "id" : "20MUOmHZ0gJ476mVOyT4OI",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/9384cba9e08790c0b3db7cd63a9046aed8c192df",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/e745cbf36b79e6789604f878d516b2eb93e83690",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/cc312c1ec85eb503ccd0c105bd5a91fe147e22a1",
+                  "width" : 64
+                } ],
+                "name" : "By The Way",
+                "type" : "album",
+                "uri" : "spotify:album:20MUOmHZ0gJ476mVOyT4OI"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/4lpA7MWpQpY7hKkwfLxw2Q"
+                },
+                "href" : "https://api.spotify.com/v1/artists/4lpA7MWpQpY7hKkwfLxw2Q",
+                "id" : "4lpA7MWpQpY7hKkwfLxw2Q",
+                "name" : "Lindsay Ell",
+                "type" : "artist",
+                "uri" : "spotify:artist:4lpA7MWpQpY7hKkwfLxw2Q"
+              } ],
+              "available_markets" : [ "CA", "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 182706,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "US58E1450051"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5i2c4cCB7Um6qoN8O4kpRD"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5i2c4cCB7Um6qoN8O4kpRD",
+              "id" : "5i2c4cCB7Um6qoN8O4kpRD",
+              "name" : "By The Way",
+              "popularity" : 43,
+              "preview_url" : "https://p.scdn.co/mp3-preview/435e819ff4ac384e09d4f24eef0652267439b7e3?cid=null",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:5i2c4cCB7Um6qoN8O4kpRD"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+                  "id" : "0LyfQWJT6nXafLPZqxe9Of",
+                  "name" : "Various Artists",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NI", "NL", "NO", "PA", "PE", "PL", "PT", "PY", "SE", "SK", "SV", "TR", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/5m5Blw275J9Q0xrH8jOexW"
+                },
+                "href" : "https://api.spotify.com/v1/albums/5m5Blw275J9Q0xrH8jOexW",
+                "id" : "5m5Blw275J9Q0xrH8jOexW",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ac1b5c77c653977b6ef35c54c9499351db242f3a",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/e90a2d92a8445e4bf396e126c5b14b7bfa9629b6",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/05ccf8800c34736c71aa160c1237311d4f725b06",
+                  "width" : 64
+                } ],
+                "name" : "Music From The O.C. Mix 1",
+                "type" : "album",
+                "uri" : "spotify:album:5m5Blw275J9Q0xrH8jOexW"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0K1q0nXQ8is36PzOKAMbNe"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0K1q0nXQ8is36PzOKAMbNe",
+                "id" : "0K1q0nXQ8is36PzOKAMbNe",
+                "name" : "Spoon",
+                "type" : "artist",
+                "uri" : "spotify:artist:0K1q0nXQ8is36PzOKAMbNe"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NI", "NL", "NO", "PA", "PE", "PL", "PT", "PY", "SE", "SK", "SV", "TR", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 160746,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USMRG0340037"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/0ZXmGxjtSWLD1KO8IRRuIg"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/0ZXmGxjtSWLD1KO8IRRuIg",
+              "id" : "0ZXmGxjtSWLD1KO8IRRuIg",
+              "name" : "The Way We Get By",
+              "popularity" : 49,
+              "preview_url" : "https://p.scdn.co/mp3-preview/0103dfbfe548fa0cf343f4fbf19f4452dcde09d8?cid=null",
+              "track_number" : 4,
+              "type" : "track",
+              "uri" : "spotify:track:0ZXmGxjtSWLD1KO8IRRuIg"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 257693,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USWB10201690"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/42z5BOO8cJda4qWBnHFLQV"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/42z5BOO8cJda4qWBnHFLQV",
+              "id" : "42z5BOO8cJda4qWBnHFLQV",
+              "name" : "This Is The Place",
+              "popularity" : 55,
+              "preview_url" : "https://p.scdn.co/mp3-preview/8d164e1e06c3d303a9d425f173567fc1e8ba6a04?cid=null",
+              "track_number" : 3,
+              "type" : "track",
+              "uri" : "spotify:track:42z5BOO8cJda4qWBnHFLQV"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 192826,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201695"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3oP2vxUR2bjFCrU9YolGnM"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3oP2vxUR2bjFCrU9YolGnM",
+              "id" : "3oP2vxUR2bjFCrU9YolGnM",
+              "name" : "I Could Die For You",
+              "popularity" : 56,
+              "preview_url" : "https://p.scdn.co/mp3-preview/56161e68bd3109343bf01aa52dd80c997b3d666a?cid=null",
+              "track_number" : 8,
+              "type" : "track",
+              "uri" : "spotify:track:3oP2vxUR2bjFCrU9YolGnM"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0K1q0nXQ8is36PzOKAMbNe"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0K1q0nXQ8is36PzOKAMbNe",
+                  "id" : "0K1q0nXQ8is36PzOKAMbNe",
+                  "name" : "Spoon",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0K1q0nXQ8is36PzOKAMbNe"
+                } ],
+                "available_markets" : [ "AR", "BO", "BR", "CA", "CL", "CO", "EC", "JP", "MX", "PE", "PY", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/0v3Pue4UjRmcwluqtcXw79"
+                },
+                "href" : "https://api.spotify.com/v1/albums/0v3Pue4UjRmcwluqtcXw79",
+                "id" : "0v3Pue4UjRmcwluqtcXw79",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/3a376e80f49d9785d6c4808293391c690352aad4",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/948f13c1678a35dc2b76a51b09e08a2ef9099b86",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/f322205d0a98033d8105cbf0e6175b0f3b876764",
+                  "width" : 64
+                } ],
+                "name" : "Kill the Moonlight",
+                "type" : "album",
+                "uri" : "spotify:album:0v3Pue4UjRmcwluqtcXw79"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0K1q0nXQ8is36PzOKAMbNe"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0K1q0nXQ8is36PzOKAMbNe",
+                "id" : "0K1q0nXQ8is36PzOKAMbNe",
+                "name" : "Spoon",
+                "type" : "artist",
+                "uri" : "spotify:artist:0K1q0nXQ8is36PzOKAMbNe"
+              } ],
+              "available_markets" : [ "AR", "BO", "BR", "CA", "CL", "CO", "EC", "JP", "MX", "PE", "PY", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 160093,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USMRG0340037"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/141UpF0ofvBWm3r5JQwZ83"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/141UpF0ofvBWm3r5JQwZ83",
+              "id" : "141UpF0ofvBWm3r5JQwZ83",
+              "name" : "The Way We Get By",
+              "popularity" : 45,
+              "preview_url" : "https://p.scdn.co/mp3-preview/af7610ca4ef74461a6f30fb90950f370b49e199a?cid=null",
+              "track_number" : 2,
+              "type" : "track",
+              "uri" : "spotify:track:141UpF0ofvBWm3r5JQwZ83"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 295573,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201696"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4jIPERh3FWrLH6w53dm0JV"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4jIPERh3FWrLH6w53dm0JV",
+              "id" : "4jIPERh3FWrLH6w53dm0JV",
+              "name" : "Midnight",
+              "popularity" : 55,
+              "preview_url" : "https://p.scdn.co/mp3-preview/0b62d21333740ee1461a9c2fcb5a74b3456cc2ce?cid=null",
+              "track_number" : 9,
+              "type" : "track",
+              "uri" : "spotify:track:4jIPERh3FWrLH6w53dm0JV"
+            }, {
+              "album" : {
+                "album_type" : "compilation",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IT", "JP", "LT", "LU", "LV", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/53tvjWbVNZKd3CvpENkzOC"
+                },
+                "href" : "https://api.spotify.com/v1/albums/53tvjWbVNZKd3CvpENkzOC",
+                "id" : "53tvjWbVNZKd3CvpENkzOC",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/55cc31d3efa495d05e034146331553db0a747cf5",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/a6cdb66f1035edb25b045ddc4fcce7908baa043d",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/35f5e13e4e9b1953f03534def9fa879dc202eb50",
+                  "width" : 64
+                } ],
+                "name" : "Greatest Hits",
+                "type" : "album",
+                "uri" : "spotify:album:53tvjWbVNZKd3CvpENkzOC"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IT", "JP", "LT", "LU", "LV", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 215666,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201297"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5pAGl4nTCwcXdce769jJuI"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5pAGl4nTCwcXdce769jJuI",
+              "id" : "5pAGl4nTCwcXdce769jJuI",
+              "name" : "By The Way",
+              "popularity" : 52,
+              "preview_url" : "https://p.scdn.co/mp3-preview/095d55fec6eda8a1e960822c852f2cef25fc8a87?cid=null",
+              "track_number" : 8,
+              "type" : "track",
+              "uri" : "spotify:track:5pAGl4nTCwcXdce769jJuI"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                  "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                  "name" : "Red Hot Chili Peppers",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+                } ],
+                "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+                "id" : "6deiaArbeoqp1xPEGdEKp1",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+                  "width" : 64
+                } ],
+                "name" : "By The Way (Deluxe Version)",
+                "type" : "album",
+                "uri" : "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+                "id" : "0L8ExT028jH3ddEcZwqJJ5",
+                "name" : "Red Hot Chili Peppers",
+                "type" : "artist",
+                "uri" : "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+              } ],
+              "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+              "disc_number" : 1,
+              "duration_ms" : 224760,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USWB10201697"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3XLJoMMM0oRHD4gHq6jV9Z"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3XLJoMMM0oRHD4gHq6jV9Z",
+              "id" : "3XLJoMMM0oRHD4gHq6jV9Z",
+              "name" : "Throw Away Your Television",
+              "popularity" : 55,
+              "preview_url" : "https://p.scdn.co/mp3-preview/a91e64f5c20a30a5142334bb415724462c2b12db?cid=null",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:3XLJoMMM0oRHD4gHq6jV9Z"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/3huVQoEWdqUTvlYpFVUHcF"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/3huVQoEWdqUTvlYpFVUHcF",
+                  "id" : "3huVQoEWdqUTvlYpFVUHcF",
+                  "name" : "Original Soundtrack",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:3huVQoEWdqUTvlYpFVUHcF"
+                } ],
+                "available_markets" : [ "CA", "US" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7p82DTmb2pwKwzXBLlURT6"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7p82DTmb2pwKwzXBLlURT6",
+                "id" : "7p82DTmb2pwKwzXBLlURT6",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/d0d170bbc35b7f53e1e76e4fe51844e89bedbc28",
+                  "width" : 639
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/f06b0cea35bc75d6146f52466eba26377b682c32",
+                  "width" : 299
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/a83a5e4e662a7c14a807c65799e128378b7bba5a",
+                  "width" : 64
+                } ],
+                "name" : "Drake & Josh: Songs From & Inspired By The Hit TV Series",
+                "type" : "album",
+                "uri" : "spotify:album:7p82DTmb2pwKwzXBLlURT6"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/03ilIKH0i08IxmjKcn63ne"
+                },
+                "href" : "https://api.spotify.com/v1/artists/03ilIKH0i08IxmjKcn63ne",
+                "id" : "03ilIKH0i08IxmjKcn63ne",
+                "name" : "Drake Bell",
+                "type" : "artist",
+                "uri" : "spotify:artist:03ilIKH0i08IxmjKcn63ne"
+              } ],
+              "available_markets" : [ "CA", "US" ],
+              "disc_number" : 1,
+              "duration_ms" : 179493,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USA820500002"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/1rS3J4u1G8f6hbmTosa8Nf"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/1rS3J4u1G8f6hbmTosa8Nf",
+              "id" : "1rS3J4u1G8f6hbmTosa8Nf",
+              "name" : "I Found A Way",
+              "popularity" : 46,
+              "preview_url" : "https://p.scdn.co/mp3-preview/ccfb864b46df86595542a1056ef33f6bad5cd935?cid=null",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:1rS3J4u1G8f6hbmTosa8Nf"
+            } ],
+            "limit" : 20,
+            "next" : "https://api.spotify.com/v1/search?query=by+the+way&type=track&offset=20&limit=20",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 5579
+          }
+        }
+    http_version: 
+  recorded_at: Wed, 24 May 2017 17:40:46 GMT
+recorded_with: VCR 3.0.1
