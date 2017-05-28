@@ -21,7 +21,7 @@ class TrackAnalyzer
   end
 
   def spotify_track_id
-    request_url = SEARCH_BASE_URL + encode_query + "&type=track"
+    request_url = SEARCH_BASE_URL + encode_track_name + "&type=track"
     response    = HTTParty.get(request_url)
     tracks      = response["tracks"]["items"]
 
@@ -45,14 +45,18 @@ class TrackAnalyzer
   end
 
   def find_by_track_name(tracks)
-    tracks.select { |item| track_name == item["name"].downcase }.first["id"]
+    tracks.select { |item| decode(track_name) == item["name"].downcase }.first["id"]
   end
 
   def auth_header
     { "Authorization" => "Bearer #{access_token}" }
   end
 
-  def encode_query
+  def encode_track_name
     track_name.gsub("_","+")
+  end
+
+  def decode(track_name)
+    track_name.gsub("_"," ")
   end
 end
