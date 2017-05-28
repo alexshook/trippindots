@@ -22,8 +22,8 @@ describe TrackAnalyzer do
     end
   end
 
-  let(:analyzer)      { TrackAnalyzer.new(q, access_token) }
-  let(:q)             { "by the way" } 
+  let(:analyzer)      { TrackAnalyzer.new(track_name, access_token) }
+  let(:track_name)    { "by the way" }
   let(:access_token)  { "BQCDmGRKM2g7J83eiNbP4HghLqMiwAkWIUIRX9-qIbzshxLlAY_Jf7kWv9Odex0TxYIOXgw3-erNLxtF2MeY3w" } 
 
   describe "#run" do
