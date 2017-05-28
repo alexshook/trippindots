@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+.section {
+  height: 300px;
+  width: 100%;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 10px solid grey;
+  position: relative;
+  overflow: hidden;
+}
+
+.dot {
+  border-radius: 100%;
+  position: absolute;
+}
+
+#trippin-error {
+  color: red;
+}
+
+#loading-gif {
+  height: 20px;
+  display: none;
+}
+
+.song-item {
+  padding: 5px;
+}
+
+.song-item>p {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+#upload-form-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 500px;
+  padding: 10px;
+  position: absolute;
+}
+
+#label-sub-text {
+  font-size: 12px;
+}
+
+#confused-text {
+  display: none;
+  width: 400px;
+}
+
+.section-hr {
+  margin-top: 75px;
+}
