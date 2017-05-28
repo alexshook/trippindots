@@ -8,7 +8,7 @@ class DotsController < ApplicationController
     params.permit(:track_name)
     track_name  = params[:track_name].presence || "by the way"
     response    = TrackAnalyzer.new(track_name, access_token).run
-    audio_file  = S3.new(track_name: track_name).file
+    audio_file  = S3.new(track_name: track_name).audio_file
 
     render json: {
       artist: response[:artist],

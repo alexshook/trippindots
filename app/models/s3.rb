@@ -18,7 +18,7 @@ class S3
     complete_multipart_upload(response.upload_id, upload_response.etag)
   end
 
-  def file
+  def audio_file
     "https://s3.amazonaws.com/#{BUCKET_NAME}/#{track_name}"
   end
 
