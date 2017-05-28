@@ -14,14 +14,13 @@ var SearchFormView = Backbone.View.extend({
 
   getTrackAnalysis: function(e) {
     this.cleanTrippinDisplay();
-    var localURL = $(e.currentTarget).prev()[0].innerHTML;
-    var songURL = 'https://s3.amazonaws.com/trippindotssongs/' + localURL.split(' ').join('+');
+    var trackName = $(e.currentTarget).prev()[0].innerHTML;
     var sensitivity = this.$('#sensitivity-value').val();
     $.ajax({
       url: '/spotify_analyze',
       type: 'GET',
       data: {
-        song_url: songURL
+        track_name: trackName
       },
       dataType: 'json'
     }).done(function(data) {
@@ -30,7 +29,7 @@ var SearchFormView = Backbone.View.extend({
         sensitivity: sensitivity,
         artist: data.artist,
         song: data.song,
-        songURL: songURL
+        songURL: data.file
       });
       this.trippinDotsView.$el.appendTo($('#trippin-display'));
     }.bind(this));

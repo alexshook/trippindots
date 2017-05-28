@@ -5,26 +5,26 @@ class DotsController < ApplicationController
   end
 
   def spotify_analyze
-    params.permit(:song_name)
-    song_name = params[:song_name].presence || "by the way"
-    response = TrackAnalyzer.new(song_name, access_token).run
+    params.permit(:track_name)
+    track_name  = params[:track_name].presence || "by the way"
+    response    = TrackAnalyzer.new(track_name, access_token).run
+    audio_file  = S3.new(track_name: track_name).file
 
-    respond_to do |format|
-      format.html { }
-      format.json { render json:
-        {
-          artist: response[:artist],
-          song: response[:track],
-          meta_data: response[:analysis]
-        }
-      }
-    end
+    render json: {
+      artist: response[:artist],
+      song: response[:track],
+      meta_data: response[:analysis],
+      file: audio_file
+    }
   end
 
   def upload
-    params.permit(:songfile)
+    params.permit(:track_name, :songfile)
 
-    S3.new(params[:songfile]).upload_track
+    S3.new(
+      track_name: params[:track_name],
+      songfile: params[:songfile]
+    ).upload_track
 
     redirect_to root_path
   end
