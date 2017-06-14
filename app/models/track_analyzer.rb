@@ -14,7 +14,6 @@ class TrackAnalyzer
     track_id    = spotify_track_id
     track       = spotify_track(track_id)
     analysis    = audio_analysis(track_id)
-    binding.pry
     artist_name = track["artists"].first["name"]
     track_name  = track["name"]
 
