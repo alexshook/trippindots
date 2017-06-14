@@ -14,6 +14,7 @@ class TrackAnalyzer
     track_id    = spotify_track_id
     track       = spotify_track(track_id)
     analysis    = audio_analysis(track_id)
+    binding.pry
     artist_name = track["artists"].first["name"]
     track_name  = track["name"]
 
@@ -22,7 +23,7 @@ class TrackAnalyzer
 
   def spotify_track_id
     request_url = SEARCH_BASE_URL + encode_track_name + "&type=track"
-    response    = HTTParty.get(request_url)
+    response    = HTTParty.get(request_url, headers: auth_header)
     tracks      = response["tracks"]["items"]
 
     begin
@@ -36,7 +37,7 @@ class TrackAnalyzer
 
   def spotify_track(track_id)
     request_url = TRACK_BASE_URL + track_id
-    HTTParty.get(request_url)
+    HTTParty.get(request_url, headers: auth_header)
   end
 
   def audio_analysis(id)
